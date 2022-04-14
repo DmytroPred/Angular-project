@@ -23,7 +23,7 @@ export class AppComponent {
   otherTheme: boolean = false;
   otherView: boolean = false;
   themeStatus: string = 'Light Theme';
-  viewStatus: string  = 'List';
+  viewStatus: string  = 'Tile';
 
   changeView() {
     this.otherView = !this.otherView;
