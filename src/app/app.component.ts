@@ -8,16 +8,13 @@ import { FILMS } from './pack-films';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'files';
-
-
   films = FILMS;
 
   film: Film = {
-    name: 'fasfsa',
-    image:  'dsad',
-    cash: 'kd;sda',
-    year: 1968
+    name: '',
+    image:  '',
+    cash: '',
+    year: 0
   }
 
   otherTheme: boolean = false;
@@ -25,16 +22,41 @@ export class AppComponent {
   themeStatus: string = 'Light Theme';
   viewStatus: string  = 'Tile';
 
+
+
+// theme and view status check
   changeView() {
     this.otherView = !this.otherView;
-    this.viewStatus = this.otherView ? 'List' : 'Tile'
-}
+    this.viewStatus = this.otherView ? 'List' : 'Tile';
+    localStorage.setItem("view", this.viewStatus = this.otherView ? 'List' : 'Tile');
+    // console.log(localStorage.getItem('view'));
+  }
 
 
   changeTheme() {
     this.otherTheme = !this.otherTheme;
-    this.themeStatus = this.otherTheme ? 'Dark Theme' : 'Light Theme'
-}
+    this.themeStatus = this.otherTheme ? 'Dark Theme' : 'Light Theme';
+    localStorage.setItem("theme", this.themeStatus = this.otherTheme ? 'Dark Theme' : 'Light Theme');
+    // console.log(localStorage.getItem('theme'));
+  }
 
 
+
+  ngOnInit() {
+    if(localStorage.getItem('view') === 'List') {
+      this.otherView = true;
+      this.viewStatus = 'List';
+    } else this.otherView = false;
+
+
+    // Object[number of object].element
+    // console.log(FILMS[6].cash);
+    // console.log(this.films[2].cash);
+
+
+    if(localStorage.getItem('theme') === 'Dark Theme') {
+      this.otherTheme = true;
+      this.themeStatus = 'Dart Theme';
+    } else this.otherTheme = false;
+  }
 }
