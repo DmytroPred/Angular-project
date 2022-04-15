@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { CashFormaterPipe } from './cash-formater.pipe';
+import { CashFormaterPipe } from './cash-formater.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // CashFormaterPipe,
+    CashFormaterPipe,
   ],
   imports: [
     BrowserModule,

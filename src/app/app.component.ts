@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
-import { Film } from './film';
-import { FILMS } from './pack-films';
+// import { Film } from './film';
+// import { FILMS } from './pack-films';
+import filmsData from './films.json';
+
+interface Film {
+  name: string;
+  image: string;
+  year: number;
+  cash: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,14 +16,17 @@ import { FILMS } from './pack-films';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  films = FILMS;
+  title = 'files';
 
-  film: Film = {
-    name: '',
-    image:  '',
-    cash: '',
-    year: 0
-  }
+  // films = FILMS;
+
+  // film: Film = {
+  //   name: '',
+  //   image:  '',
+  //   cash: '',
+  //   year: 0
+  // }
+  films: Film[] = filmsData;
 
   otherTheme: boolean = false;
   otherView: boolean = false;
