@@ -9,7 +9,6 @@
       {{viewStatus}}
     </button>
   </section>
-
   <ul class="wrapper" (click)="changeView" [ngClass]="otherView ? 'list' : 'tile'">
     <li class="film" *ngFor="let film of films">
       <img src="{{film.image}}">
