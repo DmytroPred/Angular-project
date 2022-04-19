@@ -26,7 +26,7 @@
         <span>Release year: {{film.year}}<br></span>
         <span>Box office: {{film.cash | cashFormater}}<br></span>
         <span>Creating date: {{film.creatingDate | date:'d/M/yyyy'}}<br></span>
-        <span>Actors: {{film.actors.join(', ')}}</span>
+        <span class="wrapper__film__actors">Actors: <br>{{film.actors.join(', ')}}</span>
       </div>
     </li>
   </ul>

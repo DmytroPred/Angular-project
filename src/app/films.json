@@ -5,7 +5,7 @@
     "year":1998,
     "cash":"304320254",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["gsdgs", "gksldgsd"]
+    "actors": ["Eddie Murphy"]
   },
   {
     "name":"Annabelle: Creation",
@@ -13,7 +13,7 @@
     "year":2017,
     "cash":"306515884",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["gsdgs", "gksldgsd"]
+    "actors": ["Talitha Bateman", "Stephanie Sigman"]
   },
   {
     "name":"Wonder",
@@ -21,7 +21,7 @@
     "year":2017,
     "cash":"306209289",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["Owen Wilson"]
   },
   {
     "name":"Liar Liar",
@@ -29,7 +29,7 @@
     "year":1997,
     "cash":"302710615",
     "creatingDate":"2021-04-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["Jim Carrey"]
   },
   {
     "name":"Rambo: First Blood Part II",
@@ -37,14 +37,14 @@
     "year":1985,
     "cash":"300400432",
     "creatingDate":"2020-04-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["Sylvester Stallone"]
   },{
     "name":"Van Helsing",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster4172_3.jpg",
     "year":2004,
     "cash":"300157638",
     "creatingDate":"2022-05-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["Hugh Jackman", "Kathrin Beckinsale"]
   },
   {
     "name":"The Truman Show",
@@ -52,7 +52,7 @@
     "year":1998,
     "cash":"264118201",
     "creatingDate":"2019-04-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["Jim Carrey"]
   },
   {
     "name":"Pulp Fiction",
@@ -60,7 +60,7 @@
     "year":1994,
     "cash":"213928762",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["gsdgs"]
+    "actors": ["John Travolta", "Samuel Leroy Jackson"]
   },
   {
     "name":"Rocky",
@@ -68,6 +68,6 @@
     "year":1976,
     "cash":"225000000",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": []
+    "actors": ["Sylvester Stallone"]
   }
 ]
