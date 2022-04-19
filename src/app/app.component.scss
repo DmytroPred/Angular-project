@@ -1,12 +1,15 @@
 .dark {
   background-color: #292929;
 }
+
 .light {
   background-color: white;
 }
+
 .film-data-text {
   color: white;
 }
+
 .button-section {
   display: flex;
   align-content: center;
@@ -14,6 +17,11 @@
   width: 100%;
   height: 8vw;
   background-color: #919191;
+}
+
+.mat-raised-button {
+  min-width: 0;
+  line-height: 0;
 }
 
 .button-section button {
@@ -26,19 +34,16 @@
 }
 
 .search_bar {
+  font-size: 2.2vw;
   width: 19vw;
   height: 3vw;
   margin-left: 3vw;
 }
 
-.search_bar::placeholder {
-  font-size: 1.2em;
-}
-
 .wrapper__film__remove {
-  font-size: 2vw;
-  width: 4vw;
-  height: 3vw;
+  font-size: 1.5vw;
+  width: 3vw;
+  height: 2vw;
   padding: 0;
 }
 

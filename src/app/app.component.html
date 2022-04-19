@@ -1,25 +1,25 @@
 <div [ngClass]="otherTheme ? 'light' : 'dark'">
   <section class="button-section">
-    <button (click)="changeTheme()">
+    <button mat-raised-button color="primary" (click)="changeTheme()">
       {{themeStatus}}
     </button>
-    <button (click)="changeView()">
+    <button mat-raised-button color="primary" (click)="changeView()">
       {{viewStatus}}
     </button>
-    <button (click)="openFilmModal()">Add films
+    <button mat-raised-button color="primary" (click)="openFilmModal()">Add films
     </button>
 
   </section>
   <section class="button-section">
     <input placeholder="Search" class="search_bar" (input)="onSearch($event)">
-    <button (click)="sortByName()">Sort by name</button>
-    <button (click)="sortByYear()">Sort by year</button>
-    <button (click)="sortByCreatingDate()">Sort by creating Date</button>
+    <button mat-raised-button color="primary" (click)="sortByName()">Sort by name</button>
+    <button mat-raised-button color="primary" (click)="sortByYear()">Sort by year</button>
+    <button mat-raised-button color="primary" (click)="sortByCreatingDate()">Sort by creating Date</button>
   </section>
   <ul class="wrapper" [ngClass]="otherView ? 'list' : 'tile'">
     <li class="wrapper__film" [ngClass]="otherTheme ? 'black' : 'film-data-text'"
       *ngFor="let film of result.length > 0 ? result : films; let i = index">
-      <button (click)="deleteFilm(i)" class="wrapper__film__remove">X</button>
+      <button mat-raised-button color="primary" (click)="deleteFilm(i)" class="wrapper__film__remove">X</button>
       <img src="{{film.image}}">
       <div>
         <span class="wrapper__film__name"><strong>{{film.name}}<br></strong></span>
