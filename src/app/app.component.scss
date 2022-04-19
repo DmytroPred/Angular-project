@@ -38,6 +38,11 @@
   width: 19vw;
   height: 3vw;
   margin-left: 3vw;
+  padding: 0 0 0 0.5vw;
+  border: 0.1vw;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
 }
 
 .wrapper__film__remove {
@@ -45,6 +50,7 @@
   width: 3vw;
   height: 2vw;
   padding: 0;
+  border-radius: 0.2vw;
 }
 
 // Tile
