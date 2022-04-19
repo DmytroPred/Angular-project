@@ -6,9 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CashFormaterPipe implements PipeTransform {
 
   transform(cash: string): any {
-    if(+cash >= 1e6) {
+    if (+cash >= 1e6) {
       return `${Math.round(+cash / 1e5) / 10}M`;
-    } else if(+cash >= 1e3)
+    } else if (+cash >= 1e3)
       return `${Math.round(+cash / 1e2) / 10}K`;
   }
 

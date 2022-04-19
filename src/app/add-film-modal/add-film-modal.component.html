@@ -1,0 +1,53 @@
+<form (ngSubmit)="addNewFilm()" [formGroup]="addFilmForm">
+  <h2 mat-dialog-title>Add new film</h2>
+  <mat-dialog-content class="container">
+    <mat-form-field class="container__name-form-field" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text">
+      <mat-error *ngIf="addFilmForm.get('name').hasError('required')">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="container__image-form-field" appearance="fill">
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="imageURL" type="text">
+      <mat-error *ngIf="addFilmForm.get('imageURL').hasError('required')">
+        Image URL is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="container__date-form-field" appearance="fill">
+      <mat-label>Release date</mat-label>
+      <input matInput formControlName="date" type="text">
+      <mat-error *ngIf="addFilmForm.get('date').hasError('required')">
+        Release date is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="container__cash-form-field" appearance="fill">
+      <mat-label>Box office</mat-label>
+      <input matInput formControlName="cash" type="text">
+      <mat-error *ngIf="addFilmForm.get('cash').hasError('required')">
+        Box office is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div formArrayName="actors">
+      <div *ngFor="let actor of addFilmForm.get('actors')?.controls">
+        <div [formGroup]="actor">
+          <mat-form-field class="first-name-form-field" appearance="fill">
+            <mat-label>Actor first name</mat-label>
+            <input formControlName="firstName" matInput type="text">
+          </mat-form-field>
+          <mat-form-field class="last-name-form-field" appearance="fill">
+            <mat-label>Actor last name</mat-label>
+            <input formControlName="lastName" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <button (click)="addNewActor($event)" mat-button>Add new actor</button>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button type="submit" [disabled]="addFilmForm.invalid">Add</button>
+  </mat-dialog-actions>
+</form>

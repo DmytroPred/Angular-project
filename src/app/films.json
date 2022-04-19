@@ -3,53 +3,71 @@
     "name":"Mulan",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster5767_2.jpg",
     "year":1998,
-    "cash":"304320254"
+    "cash":"304320254",
+    "creatingDate":"2022-04-17T13:36:07.674Z",
+    "actors": ["gsdgs", "gksldgsd"]
   },
   {
     "name":"Annabelle: Creation",
     "image":"https://www.kinonews.ru/insimgs/2017/poster/thumbs/poster74495_1.jpg",
     "year":2017,
-    "cash":"306515884"
+    "cash":"306515884",
+    "creatingDate":"2022-04-17T13:36:07.674Z",
+    "actors": ["gsdgs", "gksldgsd"]
   },
   {
     "name":"Wonder",
     "image":"https://www.kinonews.ru/insimgs/2017/poster/thumbs/poster76897_1.jpg",
     "year":2017,
-    "cash":"306209289"
+    "cash":"306209289",
+    "creatingDate":"2022-04-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },
   {
     "name":"Liar Liar",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster27460_1.jpg",
     "year":1997,
-    "cash":"302710615"
+    "cash":"302710615",
+    "creatingDate":"2021-04-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },
   {
     "name":"Rambo: First Blood Part II",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster3078_1.jpg",
     "year":1985,
-    "cash":"300400432"
+    "cash":"300400432",
+    "creatingDate":"2020-04-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },{
     "name":"Van Helsing",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster4172_3.jpg",
     "year":2004,
-    "cash":"300157638"
+    "cash":"300157638",
+    "creatingDate":"2022-05-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },
   {
     "name":"The Truman Show",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster5944_2.jpg",
     "year":1998,
-    "cash":"264118201"
+    "cash":"264118201",
+    "creatingDate":"2019-04-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },
   {
     "name":"Pulp Fiction",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster3163_6.jpg",
     "year":1994,
-    "cash":"213928762"
+    "cash":"213928762",
+    "creatingDate":"2022-04-17T13:36:07.674Z",
+    "actors": ["gsdgs"]
   },
   {
     "name":"Rocky",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster8336_6.jpg",
     "year":1976,
-    "cash":"225000000"
+    "cash":"225000000",
+    "creatingDate":"2022-04-17T13:36:07.674Z",
+    "actors": []
   }
 ]

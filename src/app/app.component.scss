@@ -1,7 +1,12 @@
-.alternative {
+.dark {
   background-color: #292929;
 }
-
+.light {
+  background-color: white;
+}
+.film-data-text {
+  color: white;
+}
 .button-section {
   display: flex;
   align-content: center;
@@ -17,29 +22,63 @@
   width: 20vw;
   height: 4vw;
   margin-left: 3vw;
+  padding: 0;
 }
+
+.search_bar {
+  width: 19vw;
+  height: 3vw;
+  margin-left: 3vw;
+}
+
+.search_bar::placeholder {
+  font-size: 1.2em;
+}
+
+.wrapper__film__remove {
+  font-size: 2vw;
+  width: 4vw;
+  height: 3vw;
+  padding: 0;
+}
+
 // Tile
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0;
   margin-top: 2vw;
-    .film {
-      border: 0.01vw solid #919191;
-    }
+
+  .film {
+    border: 0.01vw solid #919191;
+  }
 }
 
-.film {
+.wrapper__film {
   font-size: 2.5vw;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 3vw;
-    img {
-      width: 23vw;
-      height: auto;
-      margin: 0.6vw;
-    }
+
+  img {
+    width: 23vw;
+    height: auto;
+    margin: 0.6vw;
+  }
+
+  div {
+    font: 400 2.5vw Roboto, "Helvetica Neue", sans-serif;
+  }
+}
+
+.wrapper__film__name {
+  display: table;
+  margin: 0 auto;
+}
+
+span {
+  font: 400 2.5vw Roboto, "Helvetica Neue", sans-serif;
 }
 
 // List
@@ -48,29 +87,39 @@
   flex-direction: column;
   padding: 0;
   margin-top: 1vw;
-    img {
-      width: 9vw;
-      height: auto;
-      margin: 0.6vw;
-    }
-    .film {
-      background-color: pink;
-      height: 6vw;
+
+  img {
+    width: 9vw;
+    height: auto;
+    margin: 0.6vw;
+  }
+
+  .wrapper__film {
+    background-color: pink;
+    height: 6vw;
+    display: flex;
+    flex-direction: row;
+    margin: 1vw;
+    border: 0.1vw solid #919191;
+
+    div {
       display: flex;
+      position: absolute;
       flex-direction: row;
-      margin: 1vw;
-      border: 0.1vw solid #919191;
-      div {
-        display: flex;
-        position: absolute;
-        flex-direction: row;
-        margin-left: 1vw;
-        right: 3vw;
-        span {
-            font-size: 2.5vw;
-            padding-left: 4vw;
-            padding-bottom: 3vw;
-          }
+      justify-content: center;
+      align-items: center;
+      width: 78vw;
+      margin-right: 0vw;
+      right: 3vw;
+
+      span {
+        color: black;
+        width: 12vw;
+        font-size: 2.5vw;
+        margin-left: 3vw;
+        display: inline-block;
+        vertical-align: middle;
       }
     }
+  }
 }
