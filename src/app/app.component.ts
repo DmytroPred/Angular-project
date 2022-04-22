@@ -54,14 +54,11 @@ export class AppComponent {
       if (result) {
         this.addFilm(result);
       }
-      console.log(`Dialog result: ${result}`);
     });
   }
 
   addFilm(filmData: any) {
     let dateCreating = new Date();
-    console.log(dateCreating.toJSON());
-    console.log(filmData);
     this.films.push({
       name: filmData.name,
       image: filmData.imageURL,
