@@ -17,7 +17,7 @@ export class AddFilmModalComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       imageURL: new FormControl('', [Validators.required]),
       cash: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
+      date: new FormControl('', [Validators.required, Validators.minLength(4) , Validators.maxLength(4)]),
       actors: new FormArray([])
 
     })

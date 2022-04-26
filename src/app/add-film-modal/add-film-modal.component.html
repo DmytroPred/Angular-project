@@ -16,7 +16,7 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="container__date-form-field" appearance="fill">
-      <mat-label>Release date</mat-label>
+      <mat-label>Release year</mat-label>
       <input matInput formControlName="date" type="text">
       <mat-error *ngIf="addFilmForm.get('date').hasError('required')">
         Release date is <strong>required</strong>

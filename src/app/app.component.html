@@ -1,4 +1,4 @@
-<div [ngClass]="otherTheme ? 'light' : 'dark'">
+<div [ngClass]="otherTheme ? 'dark' : 'light'">
   <section class="button-section">
     <button mat-raised-button color="primary" (click)="changeTheme()">
       {{themeStatus}}
@@ -8,7 +8,9 @@
     </button>
     <button mat-raised-button color="primary" (click)="openFilmModal()">Add films
     </button>
-
+    <button mat-raised-button color="primary" (click)="viewFavorite()">
+      {{favFilmsStatus}}
+    </button>
   </section>
   <section class="button-section">
     <input placeholder="Search" class="search_bar" (input)="onSearch($event)">
@@ -17,17 +19,20 @@
     <button mat-raised-button color="primary" (click)="sortByCreatingDate()">Sort by creating Date</button>
   </section>
   <ul class="wrapper" [ngClass]="otherView ? 'list' : 'tile'">
-    <li class="wrapper__film" [ngClass]="otherTheme ? 'black' : 'film-data-text'"
+    <li class="wrapper__film" [ngClass]="otherTheme ? 'film-data-text' : 'black'"
       *ngFor="let film of result.length > 0 ? result : films; let i = index">
-      <button mat-raised-button color="primary" (click)="deleteFilm(i)" class="wrapper__film__remove">X</button>
-      <img src="{{film.image}}">
-      <div>
-        <span class="wrapper__film__name"><strong>{{film.name}}<br></strong></span>
+      <div class="wrapper__film__btn-on-image">
+        <button mat-raised-button color="primary" (click)="deleteFilm(i)" class="wrapper__film__btn-on-image__remove">X</button>
+        <button mat-raised-button color="primary" [ngClass]="addToFav(i) ? 'favorite' : ''" (click)="addToFavorite(i)" class="wrapper__film__btn-on-image__favorite">{{ addToFav(i) ? '❤️' : '💙'}}</button>
+        <img src="{{film.image}}">
+      </div>
+      <article class="wrapper__film__info">
+        <span class="wrapper__film__info__name"><strong>{{film.name}}<br></strong></span>
         <span>Release year: {{film.year}}<br></span>
         <span>Box office: {{film.cash | cashFormater}}<br></span>
         <span>Creating date: {{film.creatingDate | date:'d/M/yyyy'}}<br></span>
-        <span class="wrapper__film__actors">Actors: <br>{{film.actors.join(', ')}}</span>
-      </div>
+        <span class="wrapper__film__info__actors">Actors: <br>{{film.actors.join(', ')}}</span>
+      </article>
     </li>
   </ul>
 </div>

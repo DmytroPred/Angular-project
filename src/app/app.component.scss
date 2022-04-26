@@ -10,6 +10,7 @@
   color: white;
 }
 
+
 .button-section {
   display: flex;
   align-content: center;
@@ -35,24 +36,40 @@
 
 .search_bar {
   font-size: 2.2vw;
-  width: 19vw;
+  width: 19.5vw;
   height: 3vw;
   margin-left: 3vw;
   padding: 0 0 0 0.5vw;
-  border: 0.1vw;
-  border-style: inset;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  border-image: initial;
+  border: none;
 }
 
-.wrapper__film__remove {
+.wrapper__film__btn-on-image__remove {
   font-size: 1.5vw;
   width: 3vw;
   height: 2vw;
   padding: 0;
   border-radius: 0.2vw;
+  position: absolute;
+  right: -0.7vw;
+  top: -0.5vw;
+
+  z-index: 2;
 }
 
+.wrapper__film__btn-on-image__favorite {
+  font-size: 1.5vw;
+
+  width: 3vw;
+  height: 2vw;
+  padding: 0;
+
+  position: absolute;
+
+  right: -0.7vw;
+  bottom: -0.5vw;
+  z-index: 2;
+  border-radius: 0.2vw;
+}
 // Tile
 .wrapper {
   display: grid;
@@ -71,19 +88,24 @@
   align-items: center;
   flex-direction: column;
   padding: 3vw;
-
   img {
     width: 23vw;
     height: 30.6vw;
-    margin: 0.6vw;
   }
+.wrapper__film__btn-on-image {
+  position: relative;
+  width: 23vw;
+  height: 30.6vw;
+  margin-bottom: 0.4vw;
+}
 
-  div {
+.wrapper__film__info {
+    position: relative;
     font: 400 2.5vw Roboto, "Helvetica Neue", sans-serif;
   }
 }
 
-.wrapper__film__name {
+.wrapper__film__info__name {
   display: table;
   margin: 0 auto;
 }
@@ -97,12 +119,23 @@ span {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: 1vw;
 
   img {
+    position: relative;
     width: 9vw;
-    height: auto;
-    margin: 0.6vw;
+    height: 12vw;
+  }
+  .wrapper__film__btn-on-image {
+    position: relative;
+    width: 9vw;
+    height: 12vw;
+    margin-bottom: 0;
+    .wrapper__film__btn-on-image__remove, .wrapper__film__btn-on-image__favorite{
+      font-size: 1.5vw;
+      width: 3vw;
+      height: 2vw;
+
+    }
   }
 
   .wrapper__film {
@@ -113,7 +146,7 @@ span {
     margin: 1vw;
     border: 0.1vw solid #919191;
 
-    div {
+    article {
       display: flex;
       position: absolute;
       flex-direction: row;
@@ -121,7 +154,7 @@ span {
       align-items: center;
       width: 78vw;
       margin-right: 0vw;
-      right: 3vw;
+      right: 8vw;
 
       span {
         color: black;
@@ -134,6 +167,17 @@ span {
   }
 }
 
-.wrapper__film__actors {
+.wrapper__film__info__actors {
   font-size: 2vw;
+}
+
+button:hover {
+  background-color: #3232ff;
+}
+
+.favorite {
+  background-color: rgb(166, 54, 54);
+}
+.favorite:hover {
+  background-color: rgb(156, 21, 21);
 }

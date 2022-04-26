@@ -5,7 +5,8 @@
     "year":1998,
     "cash":"304320254",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["Eddie Murphy"]
+    "actors": ["Eddie Murphy"],
+    "favorite": false
   },
   {
     "name":"Annabelle: Creation",
@@ -13,7 +14,8 @@
     "year":2017,
     "cash":"306515884",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["Talitha Bateman", "Stephanie Sigman"]
+    "actors": ["Talitha Bateman", "Stephanie Sigman"],
+    "favorite": false
   },
   {
     "name":"Wonder",
@@ -21,7 +23,8 @@
     "year":2017,
     "cash":"306209289",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["Owen Wilson"]
+    "actors": ["Owen Wilson"],
+    "favorite": false
   },
   {
     "name":"Liar Liar",
@@ -29,7 +32,8 @@
     "year":1997,
     "cash":"302710615",
     "creatingDate":"2021-04-17T13:36:07.674Z",
-    "actors": ["Jim Carrey"]
+    "actors": ["Jim Carrey"],
+    "favorite": false
   },
   {
     "name":"Rambo: First Blood Part II",
@@ -37,14 +41,16 @@
     "year":1985,
     "cash":"300400432",
     "creatingDate":"2020-04-17T13:36:07.674Z",
-    "actors": ["Sylvester Stallone"]
+    "actors": ["Sylvester Stallone"],
+    "favorite": true
   },{
     "name":"Van Helsing",
     "image":"https://www.kinonews.ru/insimgs/poster/thumbs/poster4172_3.jpg",
     "year":2004,
     "cash":"300157638",
     "creatingDate":"2022-05-17T13:36:07.674Z",
-    "actors": ["Hugh Jackman", "Kathrin Beckinsale"]
+    "actors": ["Hugh Jackman", "Kathrin Beckinsale"],
+    "favorite": false
   },
   {
     "name":"The Truman Show",
@@ -52,7 +58,8 @@
     "year":1998,
     "cash":"264118201",
     "creatingDate":"2019-04-17T13:36:07.674Z",
-    "actors": ["Jim Carrey"]
+    "actors": ["Jim Carrey"],
+    "favorite": true
   },
   {
     "name":"Pulp Fiction",
@@ -60,7 +67,8 @@
     "year":1994,
     "cash":"213928762",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["John Travolta", "Samuel Leroy Jackson"]
+    "actors": ["John Travolta", "Samuel L Jackson"],
+    "favorite": true
   },
   {
     "name":"Rocky",
@@ -68,6 +76,7 @@
     "year":1976,
     "cash":"225000000",
     "creatingDate":"2022-04-17T13:36:07.674Z",
-    "actors": ["Sylvester Stallone"]
+    "actors": ["Sylvester Stallone"],
+    "favorite": true
   }
 ]
