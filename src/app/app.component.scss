@@ -1,15 +1,22 @@
+// Change theme style
 .dark {
   background-color: #292929;
+  transition: 0.5s;
+
+  .film-data-text {
+    color: white;
+  }
 }
 
 .light {
   background-color: white;
+  transition: 0.5s;
 }
 
-.film-data-text {
-  color: white;
+// Header buttons and search bar style
+button:hover {
+  background-color: #3232ff;
 }
-
 
 .button-section {
   display: flex;
@@ -43,6 +50,7 @@
   border: none;
 }
 
+// Remove and favorite button style
 .wrapper__film__btn-on-image__remove {
   font-size: 1.5vw;
   width: 3vw;
@@ -70,7 +78,8 @@
   z-index: 2;
   border-radius: 0.2vw;
 }
-// Tile
+
+// Tile style
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -88,18 +97,20 @@
   align-items: center;
   flex-direction: column;
   padding: 3vw;
+
   img {
     width: 23vw;
     height: 30.6vw;
   }
-.wrapper__film__btn-on-image {
-  position: relative;
-  width: 23vw;
-  height: 30.6vw;
-  margin-bottom: 0.4vw;
-}
 
-.wrapper__film__info {
+  .wrapper__film__btn-on-image {
+    position: relative;
+    width: 23vw;
+    height: 30.6vw;
+    margin-bottom: 0.4vw;
+  }
+
+  .wrapper__film__info {
     position: relative;
     font: 400 2.5vw Roboto, "Helvetica Neue", sans-serif;
   }
@@ -114,7 +125,7 @@ span {
   font: 400 2.5vw Roboto, "Helvetica Neue", sans-serif;
 }
 
-// List
+// List style
 .list {
   display: flex;
   flex-direction: column;
@@ -125,12 +136,15 @@ span {
     width: 9vw;
     height: 12vw;
   }
+
   .wrapper__film__btn-on-image {
     position: relative;
     width: 9vw;
     height: 12vw;
     margin-bottom: 0;
-    .wrapper__film__btn-on-image__remove, .wrapper__film__btn-on-image__favorite{
+
+    .wrapper__film__btn-on-image__remove,
+    .wrapper__film__btn-on-image__favorite {
       font-size: 1.5vw;
       width: 3vw;
       height: 2vw;
@@ -171,13 +185,11 @@ span {
   font-size: 2vw;
 }
 
-button:hover {
-  background-color: #3232ff;
-}
-
+// Favorite button style
 .favorite {
   background-color: rgb(166, 54, 54);
 }
+
 .favorite:hover {
   background-color: rgb(156, 21, 21);
 }

@@ -13,13 +13,12 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
 
-  title = 'files';
   searchText = '';
-  result: Films[] = [];
-  getFilms: Films[] = [];
-  deleteFromArray: string[] = [];
   films: Films[] = [];
   favFilms: Films[] = [];
+  result: Films[] = [];
+  getFilms: Films[] = [];
+  selectedFilmName: string[] = [];
 
   otherTheme: boolean = false;
   otherView: boolean = false;
@@ -29,17 +28,21 @@ export class AppComponent {
   viewStatus: string = 'List';
 
 
-
-  // theme and view status check
+  // Change class of view element to 'list' or 'tile'.
   changeView() {
     this.otherView = !this.otherView;
+    // Change button text content.
     this.viewStatus = this.otherView ? 'Tile' : 'List';
+    // Save view status to local storage.
     localStorage.setItem('view', this.otherView ? 'List' : 'Tile');
   }
 
+  // Change class of theme element to 'light theme' or 'dark theme'.
   changeTheme() {
     this.otherTheme = !this.otherTheme;
+    // Change button text content.
     this.themeStatus = this.otherTheme ? 'Light theme' : 'Dark theme';
+    // Save theme status to local storage.
     localStorage.setItem('theme', this.otherTheme ? 'Dark theme' : 'Light theme');
   }
 
@@ -55,6 +58,7 @@ export class AppComponent {
     });
   }
 
+  // Add film to display array.
   addFilm(filmData: any) {
     let dateCreating = new Date();
     this.films.push({
@@ -66,11 +70,14 @@ export class AppComponent {
       actors: filmData.actors.map((actor: any) => actor.firstName + ' ' + actor.lastName),
       favorite: false,
     })
+    // Update local storage.
     localStorage.setItem('filmsData', JSON.stringify(this.films));
   }
 
+  // Display favorite films, if favorite yet, display all films.
   viewFavorite() {
     this.favoriteFilms = !this.favoriteFilms;
+    // Change button text content.
     this.favFilmsStatus = this.favoriteFilms ? 'View all movie' : 'View favorite';
 
     if (this.favoriteFilms === true) {
@@ -82,51 +89,66 @@ export class AppComponent {
     }
   }
 
+  // Add films to favorite.
   addToFavorite(index: number) {
+    // Change favorite status of display films.
     this.films[index].favorite = !this.films[index].favorite;
+    // Put in local storage favorite films from display films. 
     localStorage.setItem('favFilms', JSON.stringify(this.films.filter(film => film.favorite === true)));
 
-    if (this.favoriteFilms === false) {
-      localStorage.setItem('filmsData', JSON.stringify(this.films));
-      this.favFilms = JSON.parse(`${localStorage.getItem('favFilms')}`);
-    } else {
-      this.deleteFromArray.push(this.films[index].name);
+    if (this.favoriteFilms) {
+      // After user click on favorite button, name of clicked film stored in a variable.
+      this.selectedFilmName.push(this.films[index].name);
+      // Update storage data for immediately changing showing films.
       this.films = JSON.parse(`${localStorage.getItem('favFilms')}`);
       this.getFilms = JSON.parse(`${localStorage.getItem('filmsData')}`);
 
+      // Find film in array by name and change favorite status.
       for (let i = 0; i < this.getFilms.length; i++) {
-        if (this.deleteFromArray[0] === this.getFilms[i].name) {
+        if (this.selectedFilmName[0] === this.getFilms[i].name) {
           this.getFilms[i].favorite = false;
+          // Saving changes to storage
           localStorage.setItem('filmsData', JSON.stringify(this.getFilms));
         }
       }
-      this.deleteFromArray = [];
+      // Clear variable for repeat use.
+      this.selectedFilmName = [];
+    } else { 
+      localStorage.setItem('filmsData', JSON.stringify(this.films));
+      this.favFilms = JSON.parse(`${localStorage.getItem('favFilms')}`);
     }
   }
+
+  // Change class for fav button element.
   addToFav(index: number) {
     if (this.films[index].favorite) return true
     else return false
   }
 
   deleteFilm(index: number) {
-    this.deleteFromArray.push(this.films[index].name);
+    // After user click on delete button, name of film stored in a variable.
+    this.selectedFilmName.push(this.films[index].name);
+    // Delete film from visible.
     this.films.splice(index, 1);
-    this.getFilms = JSON.parse(`${localStorage.getItem('filmsData')}`);
 
+    this.getFilms = JSON.parse(`${localStorage.getItem('filmsData')}`);
+    // Find film in array by name and remove.
     for (let i = 0; i < this.getFilms.length; i++) {
-      if (this.deleteFromArray[0] === this.getFilms[i].name) {
+      if (this.selectedFilmName[0] === this.getFilms[i].name) {
         this.getFilms.splice(i, 1);
       }
     }
+    // Update storage data.
     localStorage.setItem('filmsData', JSON.stringify(this.getFilms));
-    this.deleteFromArray = [];
+    // Clear variable for repeat use.
+    this.selectedFilmName = [];
   }
-
+  // Find movie by name
   onSearch(event: any) {
     this.searchText = event.target.value;
     this.result = this.films.filter(film => film.name.toLowerCase().includes(this.searchText.toLowerCase()))
   }
-
+  // Sort films.
   sortByName() {
     this.films.sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -143,6 +165,7 @@ export class AppComponent {
   ) { }
 
   ngOnInit() {
+    // Check view status after reload page.
     if (localStorage.getItem('view') === 'List') {
       this.otherView = true;
       this.viewStatus = 'Tile';
@@ -150,6 +173,7 @@ export class AppComponent {
       this.otherView = false;
       this.viewStatus = 'List';
     }
+    // Check theme status after reload.
     if (localStorage.getItem('theme') === 'Dark theme') {
       this.otherTheme = true;
       this.themeStatus = 'Light theme';
@@ -158,6 +182,7 @@ export class AppComponent {
       this.themeStatus = 'Dark theme';
     }
 
+    // Put data in storage and variable if empty, else get it from storage. 
     if (localStorage.getItem('filmsData') === null) {
       this.httpService.getData().subscribe((data: any) => this.films = data);
       localStorage.setItem('filmsData', JSON.stringify(filmsData));
