@@ -4,6 +4,7 @@ import { AddFilmModalComponent } from './add-film-modal/add-film-modal.component
 import filmsData from '../assets/films.json';
 import { Films } from './films-data';
 import { HttpService } from './http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -81,10 +82,12 @@ export class AppComponent {
     this.favFilmsStatus = this.favoriteFilms ? 'View all movie' : 'View favorite';
 
     if (this.favoriteFilms === true) {
+      this.router.navigateByUrl('/favorite');
       localStorage.setItem('favFilms', JSON.stringify(this.films.filter(film => film.favorite === true)));
       this.favFilms = JSON.parse(`${localStorage.getItem('favFilms')}`);
       this.films = this.favFilms;
     } else {
+      this.router.navigateByUrl('');
       this.films = JSON.parse(`${localStorage.getItem('filmsData')}`);
     }
   }
@@ -160,6 +163,7 @@ export class AppComponent {
   }
 
   constructor(
+    private router: Router,
     public dialog: MatDialog,
     private httpService: HttpService
   ) { }
@@ -182,6 +186,7 @@ export class AppComponent {
       this.themeStatus = 'Dark theme';
     }
 
+
     // Put data in storage and variable if empty, else get it from storage. 
     if (localStorage.getItem('filmsData') === null) {
       this.httpService.getData().subscribe((data: any) => this.films = data);
@@ -189,6 +194,10 @@ export class AppComponent {
     } else {
       this.films = JSON.parse(`${localStorage.getItem('filmsData')}`);
       this.favFilms = JSON.parse(`${localStorage.getItem('favFilms')}`);
+    }
+
+    if (window.location.href.indexOf('/favorite') > -1) {
+      this.viewFavorite();
     }
   }
 }
