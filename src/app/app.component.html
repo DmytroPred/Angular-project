@@ -6,7 +6,7 @@
     <button mat-raised-button color="primary" (click)="changeView()">
       {{viewStatus}}
     </button>
-    <button mat-raised-button color="primary" (click)="openFilmModal()">Add films
+    <button mat-raised-button color="primary" (click)="openFilmModal()" disabled="{{favoriteFilms}}">Add films
     </button>
     <button mat-raised-button color="primary" (click)="viewFavorite()">
       {{favFilmsStatus}}
