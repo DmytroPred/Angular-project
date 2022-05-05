@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CashFormaterPipe } from './cash-formater.pipe';
 import { AddFilmModalComponent } from './add-film-modal/add-film-modal.component';
-import { FilterPipe } from './filter-pipe.pipe';
 import { FavoriteFilmsComponent } from './favorite-films/favorite-films.component';
 
 const appRoutes: Routes = [
@@ -26,7 +25,6 @@ const appRoutes: Routes = [
     AppComponent,
     CashFormaterPipe,
     AddFilmModalComponent,
-    FilterPipe,
     FavoriteFilmsComponent,
   ],
   imports: [
